@@ -1,0 +1,162 @@
+[
+    {
+      "intent": "greeting",
+      "user_expression": "hello",
+      "bot_response": "Hi there! How can I help you today?"
+    },
+    {
+      "intent": "greeting",
+      "user_expression": "hi",
+      "bot_response": "Hey! What would you like to do?"
+    },
+    {
+      "intent": "greeting",
+      "user_expression": "good morning/afternoon/evening",
+      "bot_response": "Good [morning/afternoon/evening]! What can I assist you with?"
+    },
+    {
+      "intent": "greeting",
+      "user_expression": "hey there",
+      "bot_response": "Hi! What's on your mind today?"
+    },
+    {
+      "intent": "greeting",
+      "user_expression": "how can I help you today?",
+      "bot_response": "I'm happy to help! What can I do for you?"
+    },
+    {
+      "intent": "find_doctor",
+      "user_expression": "I'm looking for a doctor for [symptom]",
+      "bot_response": "I understand you're not feeling well. Let me help you find a doctor for [symptom]. Can you tell me a little more about your symptoms?"
+    },
+    {
+      "intent": "find_doctor",
+      "user_expression": "Can I see a specialist in [specialty]?",
+      "bot_response": "Certainly! We have specialists in various fields like [specialty]. Would you like to narrow it down based on a specific condition?"
+    },
+    {
+      "intent": "find_doctor",
+      "user_expression": "Find doctors accepting new patients",
+      "bot_response": "Absolutely! Finding a doctor who's accepting new patients can be tricky. Let me search for some options for you."
+    },
+    {
+      "intent": "find_doctor",
+      "user_expression": "What are the qualifications of Dr. [name]?",
+      "bot_response": "Sure, if we have Dr. [name] in our system, I can provide you with their qualifications."
+    },
+    {
+      "intent": "book_appointment",
+      "user_expression": "Schedule an appointment with Dr. [name] on [date] at [time]",
+      "bot_response": "Great choice! If Dr. [name] has availability on [date] at [time], I can book the appointment for you. Would you like to proceed?"
+    },
+    {
+      "intent": "book_appointment",
+      "user_expression": "What appointments are available for [specialty] this week?",
+      "bot_response": "Finding appointments can be time-consuming. Let me search for available appointments with [specialty] doctors this week."
+    },
+    {
+      "intent": "book_appointment",
+      "user_expression": "Can I reschedule my appointment with Dr. [name]?",
+      "bot_response": "Of course! Rescheduling is easy. Let me know the details of your current appointment and when you'd like to reschedule."
+    },
+    {
+      "intent": "book_appointment",
+      "user_expression": "How do I cancel my upcoming appointment?",
+      "bot_response": "Cancellations can be done through the system as well. I can guide you through the process if you'd like."
+    },
+    {
+      "intent": "insurance_inquiry",
+      "user_expression": "Does my insurance cover this appointment?",
+      "bot_response": "This is a great question to discuss with your insurance provider. However, I can provide you with an estimated cost for the appointment if that helps."
+    },
+    {
+      "intent": "billing_inquiry",
+      "user_expression": "What are the estimated costs for this service?",
+      "bot_response": "Understanding costs is important. I can provide you with an estimated cost for this service."
+    },
+    {
+      "intent": "billing_inquiry",
+      "user_expression": "How can I make a payment?",
+      "bot_response": "Payments can be made securely through our online portal. I can provide you with the link if you'd like."
+    },
+    {
+        "intent": "test_results",
+        "user_expression": "Can I view my recent test results?",
+        "bot_response": "Yes, you can view your recent test results securely through your patient portal after your doctor has reviewed them."
+      },
+      {
+        "intent": "test_results",
+        "user_expression": "What do these results mean?",
+        "bot_response": "While I can't interpret your test results, I can direct you to a general explanation of the tests performed. It's always best to discuss your results with your doctor."
+      },
+      {
+        "intent": "prescription_refill",
+        "user_expression": "I need a refill for my prescription for [medication name]",
+        "bot_response": "Prescription refills can often be requested through our online portal. Would you like me to guide you through that process?"
+      },
+      {
+        "intent": "prescription_refill",
+        "user_expression": "Can I renew my prescriptions online?",
+        "bot_response": "Yes, depending on the medication, refills can be requested online. Let me check if this applies to your prescription for [medication name]."
+      },
+      {
+        "intent": "hospital_information",
+        "user_expression": "What are your visiting hours?",
+        "bot_response": "Our visiting hours are [hours]. You can find more details about visiting guidelines on our website."
+      },
+      {
+        "intent": "hospital_information",
+        "user_expression": "Where is the [department name] located?",
+        "bot_response": "The [department name] is located on [floor] in the [building name]. A hospital map is available on our website."
+      },
+      {
+        "intent": "hospital_information",
+        "user_expression": "Do you offer parking?",
+        "bot_response": "We do offer parking options. You can find information on parking fees and locations on our website or by calling the hospital directly."
+      },
+      {
+        "intent": "hospital_information",
+        "user_expression": "Is there wheelchair accessibility?",
+        "bot_response": "Yes, our hospital is fully wheelchair accessible. We have ramps, elevators, and accessible restrooms throughout the facility."
+      },
+      {
+        "intent": "feedback",
+        "user_expression": "How do I submit a complaint/feedback?",
+        "bot_response": "We appreciate your feedback! You can submit a complaint or feedback through our website or by calling the hospital directly."
+      },
+      {
+        "intent": "support",
+        "user_expression": "I'm having trouble navigating the system",
+        "bot_response": "I understand that navigating a new system can be challenging. Let me know what you're having trouble with and I'll do my best to help."
+      },
+      {
+        "intent": "support",
+        "user_expression": "Can you connect me with a live representative?",
+        "bot_response": "Absolutely! If I can't answer your question, I can connect you with a live representative. Would you like me to do that now?"
+      },
+      {
+        "intent": "symptom_analysis",  
+        "user_expression": "What are some common causes of [symptom]?",
+        "bot_response": "**Disclaimer:** I can't diagnose medical conditions. However, based on large medical datasets, some common causes of [symptom] could be [list of possibilities]. It's important to consult with a doctor for a proper diagnosis and treatment plan."
+      },
+      {
+        "intent": "health_education", 
+        "user_expression": "Can you recommend resources for [health topic]?",
+        "bot_response": "Sure! Based on your user data (with your consent), here are some resources I found that might be helpful for learning more about [health topic]: [list of resources]."
+      },
+      {
+        "intent": "preventive_care",  
+        "user_expression": "How can I prevent [condition]?",
+        "bot_response": "**Disclaimer:** I can't provide medical advice. However, based on large medical datasets, here are some general tips on preventing [condition]: [list of tips]. It's always best to consult with your doctor for personalized preventive care recommendations."
+      },
+      {
+        "intent": "faq_cancellation",  
+        "user_expression": "What is your cancellation policy?",
+        "bot_response": "Our cancellation policy is [details of cancellation policy]. You can find more information on our website's FAQ page: [link to FAQ page on your website]."
+        },
+        {
+        "intent": "faq_forms",  
+        "user_expression": "What forms do I need to fill out before my appointment?",
+        "bot_response": "The forms you need to fill out before your appointment may vary depending on the type of appointment. However, some common forms include a patient registration form and a medical history form. You can find a list of the forms you'll need to complete on our website: [link to forms page on your website] or by calling the hospital directly."
+        }
+        ]

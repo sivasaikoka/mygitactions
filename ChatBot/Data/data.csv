@@ -1,0 +1,1001 @@
+query,intent
+What are the estimated costs for this service? I need to,billing_inquiry
+How can I make a payment? I need to,billing_inquiry
+How do I cancel my upcoming appointment? I need to,book_appointment
+What are the estimated costs for this service? please,billing_inquiry
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+What do these results mean? please,test_results
+hi I need to,greeting
+good evening I need to,greeting
+hi can you,greeting
+What do these results mean? please,test_results
+Do you offer parking? could you,hospital_information
+What are some common causes of headaches? can you,symptom_analysis
+How can I make a payment? I need to,billing_inquiry
+good afternoon please,greeting
+Do you offer parking? please,hospital_information
+What are the estimated costs for this service? can you,billing_inquiry
+How do I submit a complaint? could you,feedback
+Does my insurance cover this appointment? could you,insurance_inquiry
+What appointments are available for dermatology this week? could you,book_appointment
+hey there can you,greeting
+Can I view my recent test results? I need to,test_results
+I'm looking for a doctor for headache I need to,find_doctor
+I'm having trouble navigating the system I need to,support
+What do these results mean? can you,test_results
+I'm having trouble navigating the system can you,support
+I'm looking for a doctor for headache could you,find_doctor
+good morning can you,greeting
+What is your cancellation policy? could you,faq_cancellation
+hello can you,greeting
+Does my insurance cover this appointment? could you,insurance_inquiry
+How can I make a payment? please,billing_inquiry
+Is there wheelchair accessibility? please,hospital_information
+What are the estimated costs for this service? please,billing_inquiry
+Can I see a specialist in cardiology? I need to,find_doctor
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+Do you offer parking? please,hospital_information
+What are some common causes of headaches? please,symptom_analysis
+What are the qualifications of Dr. Smith? can you,find_doctor
+What are the qualifications of Dr. Smith? can you,find_doctor
+I need a refill for my prescription for Lipitor can you,prescription_refill
+hey there can you,greeting
+Find doctors accepting new patients I need to,find_doctor
+Is there wheelchair accessibility? could you,hospital_information
+Can I renew my prescriptions online? please,prescription_refill
+What are your visiting hours? please,hospital_information
+Can you connect me with a live representative? please,support
+good morning can you,greeting
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+How do I cancel my upcoming appointment? I need to,book_appointment
+Can I renew my prescriptions online? please,prescription_refill
+Is there wheelchair accessibility? I need to,hospital_information
+Is there wheelchair accessibility? I need to,hospital_information
+Where is the cardiology department located? please,hospital_information
+good afternoon I need to,greeting
+What is your cancellation policy? can you,faq_cancellation
+Where is the cardiology department located? please,hospital_information
+hi can you,greeting
+What are some common causes of headaches? I need to,symptom_analysis
+What are the estimated costs for this service? could you,billing_inquiry
+What are the estimated costs for this service? could you,billing_inquiry
+Do you offer parking? can you,hospital_information
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+Can you recommend resources for diabetes? can you,health_education
+What is your cancellation policy? I need to,faq_cancellation
+hi please,greeting
+What are the estimated costs for this service? can you,billing_inquiry
+What do these results mean? could you,test_results
+Find doctors accepting new patients please,find_doctor
+What are the estimated costs for this service? I need to,billing_inquiry
+Do you offer parking? I need to,hospital_information
+What are the estimated costs for this service? please,billing_inquiry
+What do these results mean? can you,test_results
+What do these results mean? can you,test_results
+hello please,greeting
+How can I prevent hypertension? could you,preventive_care
+good morning please,greeting
+What are some common causes of headaches? please,symptom_analysis
+how can I help you today? can you,greeting
+What are the qualifications of Dr. Smith? I need to,find_doctor
+Can I reschedule my appointment with Dr. Smith? I need to,book_appointment
+What are some common causes of headaches? please,symptom_analysis
+Can I see a specialist in cardiology? could you,find_doctor
+What are your visiting hours? could you,hospital_information
+I'm having trouble navigating the system please,support
+What are some common causes of headaches? I need to,symptom_analysis
+What do these results mean? I need to,test_results
+How can I make a payment? could you,billing_inquiry
+good morning can you,greeting
+Can I see a specialist in cardiology? please,find_doctor
+What are the qualifications of Dr. Smith? please,find_doctor
+How can I prevent hypertension? I need to,preventive_care
+What do these results mean? can you,test_results
+What are the qualifications of Dr. Smith? please,find_doctor
+Where is the cardiology department located? can you,hospital_information
+How can I make a payment? could you,billing_inquiry
+Can I view my recent test results? could you,test_results
+Where is the cardiology department located? I need to,hospital_information
+Can you recommend resources for diabetes? could you,health_education
+What appointments are available for dermatology this week? I need to,book_appointment
+good morning I need to,greeting
+Do you offer parking? can you,hospital_information
+What are the qualifications of Dr. Smith? could you,find_doctor
+Find doctors accepting new patients I need to,find_doctor
+Can I renew my prescriptions online? please,prescription_refill
+How can I make a payment? can you,billing_inquiry
+Find doctors accepting new patients could you,find_doctor
+Does my insurance cover this appointment? please,insurance_inquiry
+What are the qualifications of Dr. Smith? can you,find_doctor
+What appointments are available for dermatology this week? can you,book_appointment
+how can I help you today? please,greeting
+I'm having trouble navigating the system I need to,support
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+I'm having trouble navigating the system could you,support
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can you connect me with a live representative? I need to,support
+hey there I need to,greeting
+What are the estimated costs for this service? I need to,billing_inquiry
+Is there wheelchair accessibility? please,hospital_information
+I'm having trouble navigating the system I need to,support
+What are your visiting hours? can you,hospital_information
+good morning I need to,greeting
+Can I renew my prescriptions online? please,prescription_refill
+Is there wheelchair accessibility? I need to,hospital_information
+Does my insurance cover this appointment? could you,insurance_inquiry
+What are your visiting hours? I need to,hospital_information
+I'm having trouble navigating the system could you,support
+What forms do I need to fill out before my appointment? I need to,faq_forms
+How do I cancel my upcoming appointment? please,book_appointment
+Can I reschedule my appointment with Dr. Smith? I need to,book_appointment
+Can I view my recent test results? I need to,test_results
+Does my insurance cover this appointment? could you,insurance_inquiry
+What forms do I need to fill out before my appointment? please,faq_forms
+What is your cancellation policy? could you,faq_cancellation
+how can I help you today? could you,greeting
+Can I view my recent test results? please,test_results
+Does my insurance cover this appointment? could you,insurance_inquiry
+Can you recommend resources for diabetes? could you,health_education
+hi I need to,greeting
+good evening I need to,greeting
+What forms do I need to fill out before my appointment? could you,faq_forms
+Do you offer parking? please,hospital_information
+What are your visiting hours? could you,hospital_information
+hey there please,greeting
+Where is the cardiology department located? can you,hospital_information
+Find doctors accepting new patients please,find_doctor
+Can I renew my prescriptions online? could you,prescription_refill
+Can I see a specialist in cardiology? can you,find_doctor
+Can you connect me with a live representative? could you,support
+I'm looking for a doctor for headache could you,find_doctor
+What do these results mean? can you,test_results
+good evening I need to,greeting
+Can you connect me with a live representative? could you,support
+hi please,greeting
+hi please,greeting
+How can I prevent hypertension? I need to,preventive_care
+good evening could you,greeting
+What is your cancellation policy? could you,faq_cancellation
+good morning can you,greeting
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+What are the qualifications of Dr. Smith? I need to,find_doctor
+good morning could you,greeting
+Does my insurance cover this appointment? could you,insurance_inquiry
+What are some common causes of headaches? can you,symptom_analysis
+How do I submit a complaint? please,feedback
+Do you offer parking? can you,hospital_information
+Can you recommend resources for diabetes? please,health_education
+I'm having trouble navigating the system I need to,support
+What are the qualifications of Dr. Smith? can you,find_doctor
+Do you offer parking? could you,hospital_information
+Do you offer parking? could you,hospital_information
+Can you recommend resources for diabetes? could you,health_education
+Can I view my recent test results? please,test_results
+Can you recommend resources for diabetes? could you,health_education
+Does my insurance cover this appointment? can you,insurance_inquiry
+What do these results mean? please,test_results
+How do I submit a complaint? can you,feedback
+hi I need to,greeting
+good morning I need to,greeting
+hi could you,greeting
+Can I see a specialist in cardiology? can you,find_doctor
+How can I make a payment? please,billing_inquiry
+What appointments are available for dermatology this week? please,book_appointment
+Can I renew my prescriptions online? can you,prescription_refill
+how can I help you today? please,greeting
+Can I see a specialist in cardiology? could you,find_doctor
+Does my insurance cover this appointment? I need to,insurance_inquiry
+good morning please,greeting
+What are the estimated costs for this service? can you,billing_inquiry
+Can you recommend resources for diabetes? could you,health_education
+Can I see a specialist in cardiology? could you,find_doctor
+good evening please,greeting
+How can I make a payment? I need to,billing_inquiry
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+hey there I need to,greeting
+Is there wheelchair accessibility? can you,hospital_information
+how can I help you today? can you,greeting
+What do these results mean? can you,test_results
+Do you offer parking? could you,hospital_information
+Can I see a specialist in cardiology? could you,find_doctor
+Find doctors accepting new patients please,find_doctor
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+What are the qualifications of Dr. Smith? I need to,find_doctor
+How can I prevent hypertension? can you,preventive_care
+What are your visiting hours? could you,hospital_information
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+Does my insurance cover this appointment? could you,insurance_inquiry
+good morning please,greeting
+What are your visiting hours? please,hospital_information
+What appointments are available for dermatology this week? could you,book_appointment
+What appointments are available for dermatology this week? please,book_appointment
+Where is the cardiology department located? could you,hospital_information
+How do I submit a complaint? could you,feedback
+how can I help you today? please,greeting
+Can you recommend resources for diabetes? can you,health_education
+Can I see a specialist in cardiology? please,find_doctor
+What are your visiting hours? can you,hospital_information
+Where is the cardiology department located? I need to,hospital_information
+I need a refill for my prescription for Lipitor please,prescription_refill
+Can I renew my prescriptions online? please,prescription_refill
+Is there wheelchair accessibility? could you,hospital_information
+hi please,greeting
+good afternoon can you,greeting
+What are the estimated costs for this service? could you,billing_inquiry
+What appointments are available for dermatology this week? can you,book_appointment
+What is your cancellation policy? could you,faq_cancellation
+Can you recommend resources for diabetes? can you,health_education
+Can I view my recent test results? I need to,test_results
+good afternoon can you,greeting
+How can I make a payment? please,billing_inquiry
+How do I cancel my upcoming appointment? can you,book_appointment
+How can I make a payment? please,billing_inquiry
+What do these results mean? can you,test_results
+Do you offer parking? I need to,hospital_information
+How can I prevent hypertension? please,preventive_care
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Do you offer parking? I need to,hospital_information
+What appointments are available for dermatology this week? I need to,book_appointment
+hello can you,greeting
+hello please,greeting
+What are the qualifications of Dr. Smith? please,find_doctor
+What are your visiting hours? could you,hospital_information
+How can I make a payment? could you,billing_inquiry
+I'm having trouble navigating the system could you,support
+How do I submit a complaint? I need to,feedback
+good afternoon can you,greeting
+hello can you,greeting
+Where is the cardiology department located? I need to,hospital_information
+What are some common causes of headaches? please,symptom_analysis
+What are the qualifications of Dr. Smith? I need to,find_doctor
+Does my insurance cover this appointment? could you,insurance_inquiry
+Can you recommend resources for diabetes? I need to,health_education
+What are some common causes of headaches? could you,symptom_analysis
+Can I view my recent test results? can you,test_results
+Is there wheelchair accessibility? I need to,hospital_information
+Find doctors accepting new patients can you,find_doctor
+What is your cancellation policy? please,faq_cancellation
+How do I cancel my upcoming appointment? can you,book_appointment
+Can I renew my prescriptions online? could you,prescription_refill
+Can you connect me with a live representative? I need to,support
+What are your visiting hours? can you,hospital_information
+Can I renew my prescriptions online? could you,prescription_refill
+hello could you,greeting
+Do you offer parking? could you,hospital_information
+good afternoon I need to,greeting
+Can I renew my prescriptions online? could you,prescription_refill
+good evening I need to,greeting
+Can I see a specialist in cardiology? I need to,find_doctor
+What do these results mean? could you,test_results
+how can I help you today? I need to,greeting
+hi could you,greeting
+Where is the cardiology department located? please,hospital_information
+good morning could you,greeting
+hello can you,greeting
+Can I view my recent test results? could you,test_results
+How do I submit a complaint? I need to,feedback
+good morning can you,greeting
+Can you connect me with a live representative? please,support
+Is there wheelchair accessibility? could you,hospital_information
+What forms do I need to fill out before my appointment? can you,faq_forms
+Do you offer parking? can you,hospital_information
+how can I help you today? I need to,greeting
+Can I see a specialist in cardiology? can you,find_doctor
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+how can I help you today? could you,greeting
+Does my insurance cover this appointment? could you,insurance_inquiry
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+What are the qualifications of Dr. Smith? could you,find_doctor
+hey there could you,greeting
+What forms do I need to fill out before my appointment? can you,faq_forms
+Find doctors accepting new patients can you,find_doctor
+Can I view my recent test results? I need to,test_results
+What is your cancellation policy? please,faq_cancellation
+Can you connect me with a live representative? could you,support
+good morning can you,greeting
+What do these results mean? please,test_results
+What are your visiting hours? can you,hospital_information
+hi please,greeting
+How can I make a payment? can you,billing_inquiry
+What forms do I need to fill out before my appointment? could you,faq_forms
+Can I view my recent test results? please,test_results
+hi could you,greeting
+How can I prevent hypertension? I need to,preventive_care
+How can I prevent hypertension? I need to,preventive_care
+Where is the cardiology department located? please,hospital_information
+Find doctors accepting new patients please,find_doctor
+What do these results mean? could you,test_results
+What are some common causes of headaches? can you,symptom_analysis
+What are some common causes of headaches? can you,symptom_analysis
+hi could you,greeting
+What is your cancellation policy? could you,faq_cancellation
+Can I view my recent test results? I need to,test_results
+Does my insurance cover this appointment? could you,insurance_inquiry
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+how can I help you today? can you,greeting
+how can I help you today? please,greeting
+I'm looking for a doctor for headache could you,find_doctor
+What forms do I need to fill out before my appointment? I need to,faq_forms
+good afternoon can you,greeting
+How do I cancel my upcoming appointment? I need to,book_appointment
+good afternoon could you,greeting
+Does my insurance cover this appointment? could you,insurance_inquiry
+Find doctors accepting new patients please,find_doctor
+hello I need to,greeting
+Can you connect me with a live representative? can you,support
+hey there could you,greeting
+I'm looking for a doctor for headache please,find_doctor
+What is your cancellation policy? can you,faq_cancellation
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+What are the estimated costs for this service? could you,billing_inquiry
+good morning please,greeting
+good morning please,greeting
+What is your cancellation policy? please,faq_cancellation
+Find doctors accepting new patients I need to,find_doctor
+How do I submit a complaint? can you,feedback
+How can I make a payment? can you,billing_inquiry
+How do I cancel my upcoming appointment? can you,book_appointment
+Can you connect me with a live representative? could you,support
+Can you connect me with a live representative? could you,support
+Where is the cardiology department located? can you,hospital_information
+I need a refill for my prescription for Lipitor can you,prescription_refill
+Can I see a specialist in cardiology? I need to,find_doctor
+good afternoon could you,greeting
+Can I see a specialist in cardiology? I need to,find_doctor
+Find doctors accepting new patients I need to,find_doctor
+Where is the cardiology department located? can you,hospital_information
+how can I help you today? could you,greeting
+How can I make a payment? please,billing_inquiry
+How can I prevent hypertension? could you,preventive_care
+Can I renew my prescriptions online? can you,prescription_refill
+What are the qualifications of Dr. Smith? could you,find_doctor
+hey there please,greeting
+What appointments are available for dermatology this week? I need to,book_appointment
+good evening I need to,greeting
+good afternoon I need to,greeting
+What appointments are available for dermatology this week? could you,book_appointment
+hello could you,greeting
+good afternoon I need to,greeting
+How can I make a payment? can you,billing_inquiry
+How do I cancel my upcoming appointment? could you,book_appointment
+hey there I need to,greeting
+Can you recommend resources for diabetes? please,health_education
+good afternoon I need to,greeting
+Can I see a specialist in cardiology? I need to,find_doctor
+Is there wheelchair accessibility? can you,hospital_information
+Find doctors accepting new patients could you,find_doctor
+How do I submit a complaint? could you,feedback
+how can I help you today? I need to,greeting
+What do these results mean? can you,test_results
+Where is the cardiology department located? could you,hospital_information
+What appointments are available for dermatology this week? can you,book_appointment
+What forms do I need to fill out before my appointment? could you,faq_forms
+good morning could you,greeting
+Is there wheelchair accessibility? could you,hospital_information
+good afternoon please,greeting
+Is there wheelchair accessibility? could you,hospital_information
+I need a refill for my prescription for Lipitor could you,prescription_refill
+Does my insurance cover this appointment? can you,insurance_inquiry
+Can I see a specialist in cardiology? I need to,find_doctor
+how can I help you today? I need to,greeting
+hey there I need to,greeting
+Does my insurance cover this appointment? I need to,insurance_inquiry
+What are some common causes of headaches? can you,symptom_analysis
+hello I need to,greeting
+How do I cancel my upcoming appointment? please,book_appointment
+Can you connect me with a live representative? I need to,support
+how can I help you today? I need to,greeting
+Where is the cardiology department located? I need to,hospital_information
+How do I submit a complaint? please,feedback
+What forms do I need to fill out before my appointment? can you,faq_forms
+how can I help you today? I need to,greeting
+I'm looking for a doctor for headache could you,find_doctor
+Can I renew my prescriptions online? could you,prescription_refill
+Can you recommend resources for diabetes? can you,health_education
+Find doctors accepting new patients can you,find_doctor
+good evening can you,greeting
+I'm looking for a doctor for headache can you,find_doctor
+Can I renew my prescriptions online? I need to,prescription_refill
+hi can you,greeting
+What are your visiting hours? can you,hospital_information
+What forms do I need to fill out before my appointment? please,faq_forms
+hey there could you,greeting
+I'm having trouble navigating the system can you,support
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+What is your cancellation policy? could you,faq_cancellation
+good afternoon please,greeting
+Do you offer parking? please,hospital_information
+Do you offer parking? can you,hospital_information
+hi I need to,greeting
+Can I renew my prescriptions online? could you,prescription_refill
+What are some common causes of headaches? can you,symptom_analysis
+What appointments are available for dermatology this week? please,book_appointment
+I'm having trouble navigating the system could you,support
+hey there please,greeting
+How do I submit a complaint? could you,feedback
+good morning can you,greeting
+What are the qualifications of Dr. Smith? could you,find_doctor
+hi please,greeting
+Do you offer parking? can you,hospital_information
+I need a refill for my prescription for Lipitor could you,prescription_refill
+What is your cancellation policy? could you,faq_cancellation
+Can you recommend resources for diabetes? please,health_education
+What are your visiting hours? can you,hospital_information
+hi can you,greeting
+I'm looking for a doctor for headache can you,find_doctor
+What forms do I need to fill out before my appointment? I need to,faq_forms
+How do I submit a complaint? can you,feedback
+How do I submit a complaint? could you,feedback
+What appointments are available for dermatology this week? can you,book_appointment
+I need a refill for my prescription for Lipitor could you,prescription_refill
+What appointments are available for dermatology this week? could you,book_appointment
+Can you recommend resources for diabetes? I need to,health_education
+Can you recommend resources for diabetes? can you,health_education
+good evening could you,greeting
+How do I cancel my upcoming appointment? can you,book_appointment
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+Can I reschedule my appointment with Dr. Smith? I need to,book_appointment
+What are the qualifications of Dr. Smith? can you,find_doctor
+Does my insurance cover this appointment? please,insurance_inquiry
+Where is the cardiology department located? please,hospital_information
+I'm having trouble navigating the system please,support
+good evening could you,greeting
+Where is the cardiology department located? could you,hospital_information
+Find doctors accepting new patients I need to,find_doctor
+good evening could you,greeting
+Can you recommend resources for diabetes? can you,health_education
+good evening please,greeting
+What do these results mean? can you,test_results
+hi I need to,greeting
+how can I help you today? I need to,greeting
+Do you offer parking? can you,hospital_information
+Can I see a specialist in cardiology? could you,find_doctor
+hello I need to,greeting
+What appointments are available for dermatology this week? I need to,book_appointment
+I'm looking for a doctor for headache can you,find_doctor
+hello can you,greeting
+What do these results mean? I need to,test_results
+Is there wheelchair accessibility? can you,hospital_information
+I'm having trouble navigating the system could you,support
+good evening please,greeting
+What are the qualifications of Dr. Smith? can you,find_doctor
+What appointments are available for dermatology this week? please,book_appointment
+What appointments are available for dermatology this week? could you,book_appointment
+Can I see a specialist in cardiology? I need to,find_doctor
+What appointments are available for dermatology this week? can you,book_appointment
+What is your cancellation policy? can you,faq_cancellation
+What are your visiting hours? I need to,hospital_information
+I'm looking for a doctor for headache can you,find_doctor
+How can I make a payment? please,billing_inquiry
+What forms do I need to fill out before my appointment? could you,faq_forms
+I'm having trouble navigating the system could you,support
+How do I submit a complaint? can you,feedback
+Can you recommend resources for diabetes? could you,health_education
+hey there could you,greeting
+Can I renew my prescriptions online? I need to,prescription_refill
+What is your cancellation policy? I need to,faq_cancellation
+How do I cancel my upcoming appointment? I need to,book_appointment
+Where is the cardiology department located? please,hospital_information
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+Does my insurance cover this appointment? can you,insurance_inquiry
+What are your visiting hours? can you,hospital_information
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+What are your visiting hours? could you,hospital_information
+hello could you,greeting
+I'm looking for a doctor for headache I need to,find_doctor
+What is your cancellation policy? please,faq_cancellation
+I'm having trouble navigating the system I need to,support
+Find doctors accepting new patients I need to,find_doctor
+I'm looking for a doctor for headache please,find_doctor
+Find doctors accepting new patients please,find_doctor
+How can I prevent hypertension? please,preventive_care
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+What are the qualifications of Dr. Smith? could you,find_doctor
+What is your cancellation policy? please,faq_cancellation
+What are the estimated costs for this service? please,billing_inquiry
+Can I see a specialist in cardiology? I need to,find_doctor
+What are some common causes of headaches? can you,symptom_analysis
+How do I cancel my upcoming appointment? could you,book_appointment
+how can I help you today? I need to,greeting
+I'm looking for a doctor for headache could you,find_doctor
+What are your visiting hours? could you,hospital_information
+Can I view my recent test results? can you,test_results
+Find doctors accepting new patients could you,find_doctor
+What are the estimated costs for this service? please,billing_inquiry
+Can you connect me with a live representative? can you,support
+hi please,greeting
+good afternoon please,greeting
+Can you connect me with a live representative? could you,support
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+What are some common causes of headaches? can you,symptom_analysis
+hey there I need to,greeting
+What forms do I need to fill out before my appointment? please,faq_forms
+I'm having trouble navigating the system could you,support
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can I view my recent test results? please,test_results
+hello can you,greeting
+What are your visiting hours? please,hospital_information
+What appointments are available for dermatology this week? can you,book_appointment
+Find doctors accepting new patients can you,find_doctor
+What are your visiting hours? could you,hospital_information
+I need a refill for my prescription for Lipitor could you,prescription_refill
+What do these results mean? please,test_results
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+hey there please,greeting
+I'm looking for a doctor for headache can you,find_doctor
+What forms do I need to fill out before my appointment? could you,faq_forms
+What is your cancellation policy? please,faq_cancellation
+good evening could you,greeting
+Can you connect me with a live representative? please,support
+Where is the cardiology department located? I need to,hospital_information
+Can I view my recent test results? please,test_results
+hi could you,greeting
+What are your visiting hours? I need to,hospital_information
+What are some common causes of headaches? please,symptom_analysis
+What is your cancellation policy? can you,faq_cancellation
+What are some common causes of headaches? can you,symptom_analysis
+Schedule an appointment with Dr. Smith on June 15 at 10 AM could you,book_appointment
+good morning I need to,greeting
+Can I renew my prescriptions online? can you,prescription_refill
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+good morning can you,greeting
+good evening could you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+What appointments are available for dermatology this week? I need to,book_appointment
+Can you connect me with a live representative? can you,support
+How can I make a payment? can you,billing_inquiry
+good evening could you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM could you,book_appointment
+Can I view my recent test results? could you,test_results
+Is there wheelchair accessibility? can you,hospital_information
+How do I cancel my upcoming appointment? I need to,book_appointment
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+What are the estimated costs for this service? can you,billing_inquiry
+Can I see a specialist in cardiology? could you,find_doctor
+hey there could you,greeting
+Find doctors accepting new patients I need to,find_doctor
+good evening please,greeting
+How do I submit a complaint? can you,feedback
+What forms do I need to fill out before my appointment? can you,faq_forms
+Is there wheelchair accessibility? I need to,hospital_information
+hello could you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM could you,book_appointment
+What are the qualifications of Dr. Smith? can you,find_doctor
+Does my insurance cover this appointment? can you,insurance_inquiry
+I'm looking for a doctor for headache can you,find_doctor
+What are the qualifications of Dr. Smith? could you,find_doctor
+Does my insurance cover this appointment? I need to,insurance_inquiry
+What are the estimated costs for this service? can you,billing_inquiry
+hello I need to,greeting
+How can I prevent hypertension? could you,preventive_care
+good morning I need to,greeting
+How do I submit a complaint? could you,feedback
+What are your visiting hours? I need to,hospital_information
+hey there could you,greeting
+What appointments are available for dermatology this week? could you,book_appointment
+Can I renew my prescriptions online? can you,prescription_refill
+How do I submit a complaint? could you,feedback
+What do these results mean? could you,test_results
+Where is the cardiology department located? please,hospital_information
+How can I prevent hypertension? I need to,preventive_care
+Do you offer parking? please,hospital_information
+Does my insurance cover this appointment? I need to,insurance_inquiry
+Can you recommend resources for diabetes? please,health_education
+Can you recommend resources for diabetes? can you,health_education
+I'm looking for a doctor for headache I need to,find_doctor
+What forms do I need to fill out before my appointment? can you,faq_forms
+What is your cancellation policy? please,faq_cancellation
+What are your visiting hours? can you,hospital_information
+Is there wheelchair accessibility? could you,hospital_information
+hello can you,greeting
+Do you offer parking? can you,hospital_information
+how can I help you today? I need to,greeting
+Can I renew my prescriptions online? I need to,prescription_refill
+What are the estimated costs for this service? can you,billing_inquiry
+I'm looking for a doctor for headache please,find_doctor
+What do these results mean? can you,test_results
+I'm looking for a doctor for headache I need to,find_doctor
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+how can I help you today? please,greeting
+how can I help you today? please,greeting
+What do these results mean? I need to,test_results
+hi please,greeting
+Do you offer parking? please,hospital_information
+hi can you,greeting
+What are the estimated costs for this service? please,billing_inquiry
+How do I submit a complaint? please,feedback
+What are your visiting hours? could you,hospital_information
+How can I prevent hypertension? can you,preventive_care
+Do you offer parking? I need to,hospital_information
+Can I view my recent test results? I need to,test_results
+How do I submit a complaint? could you,feedback
+I'm looking for a doctor for headache can you,find_doctor
+How do I cancel my upcoming appointment? I need to,book_appointment
+What are the estimated costs for this service? I need to,billing_inquiry
+What are some common causes of headaches? I need to,symptom_analysis
+Find doctors accepting new patients please,find_doctor
+How can I prevent hypertension? can you,preventive_care
+What is your cancellation policy? can you,faq_cancellation
+good afternoon could you,greeting
+What are the qualifications of Dr. Smith? could you,find_doctor
+Where is the cardiology department located? I need to,hospital_information
+good evening please,greeting
+How can I make a payment? can you,billing_inquiry
+hey there can you,greeting
+Does my insurance cover this appointment? can you,insurance_inquiry
+Find doctors accepting new patients could you,find_doctor
+Find doctors accepting new patients can you,find_doctor
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+How do I submit a complaint? please,feedback
+how can I help you today? could you,greeting
+I need a refill for my prescription for Lipitor please,prescription_refill
+Does my insurance cover this appointment? I need to,insurance_inquiry
+hey there please,greeting
+I need a refill for my prescription for Lipitor could you,prescription_refill
+Can I renew my prescriptions online? could you,prescription_refill
+Can I view my recent test results? could you,test_results
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+Can you recommend resources for diabetes? could you,health_education
+hello I need to,greeting
+Is there wheelchair accessibility? could you,hospital_information
+Does my insurance cover this appointment? please,insurance_inquiry
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+How can I prevent hypertension? can you,preventive_care
+What is your cancellation policy? please,faq_cancellation
+What are some common causes of headaches? could you,symptom_analysis
+What are some common causes of headaches? please,symptom_analysis
+good morning I need to,greeting
+how can I help you today? could you,greeting
+good afternoon could you,greeting
+good morning can you,greeting
+What forms do I need to fill out before my appointment? could you,faq_forms
+What do these results mean? could you,test_results
+good evening can you,greeting
+How can I make a payment? could you,billing_inquiry
+What are the qualifications of Dr. Smith? could you,find_doctor
+Can I renew my prescriptions online? could you,prescription_refill
+Is there wheelchair accessibility? I need to,hospital_information
+What is your cancellation policy? I need to,faq_cancellation
+How can I prevent hypertension? please,preventive_care
+Do you offer parking? can you,hospital_information
+Can you recommend resources for diabetes? I need to,health_education
+How do I cancel my upcoming appointment? could you,book_appointment
+Find doctors accepting new patients can you,find_doctor
+Can you recommend resources for diabetes? could you,health_education
+Where is the cardiology department located? please,hospital_information
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+Does my insurance cover this appointment? please,insurance_inquiry
+How can I prevent hypertension? I need to,preventive_care
+Is there wheelchair accessibility? please,hospital_information
+Can I renew my prescriptions online? can you,prescription_refill
+good evening please,greeting
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can I view my recent test results? could you,test_results
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Where is the cardiology department located? could you,hospital_information
+How do I submit a complaint? please,feedback
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+I'm looking for a doctor for headache I need to,find_doctor
+hello I need to,greeting
+good afternoon can you,greeting
+Can you connect me with a live representative? I need to,support
+good afternoon I need to,greeting
+How do I submit a complaint? please,feedback
+Can I see a specialist in cardiology? can you,find_doctor
+What is your cancellation policy? please,faq_cancellation
+good morning could you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+Can I renew my prescriptions online? can you,prescription_refill
+How do I cancel my upcoming appointment? could you,book_appointment
+What do these results mean? I need to,test_results
+hello could you,greeting
+Is there wheelchair accessibility? please,hospital_information
+What are the estimated costs for this service? could you,billing_inquiry
+How do I cancel my upcoming appointment? I need to,book_appointment
+How can I prevent hypertension? could you,preventive_care
+What forms do I need to fill out before my appointment? could you,faq_forms
+How do I submit a complaint? please,feedback
+good afternoon can you,greeting
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can I view my recent test results? can you,test_results
+hello could you,greeting
+hey there can you,greeting
+good afternoon can you,greeting
+I'm having trouble navigating the system please,support
+how can I help you today? can you,greeting
+Can you connect me with a live representative? can you,support
+Can I view my recent test results? please,test_results
+Can you recommend resources for diabetes? please,health_education
+Can I see a specialist in cardiology? can you,find_doctor
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+I'm looking for a doctor for headache can you,find_doctor
+good evening please,greeting
+What do these results mean? can you,test_results
+I need a refill for my prescription for Lipitor can you,prescription_refill
+hey there could you,greeting
+What appointments are available for dermatology this week? could you,book_appointment
+What are the qualifications of Dr. Smith? I need to,find_doctor
+good evening can you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+Can I see a specialist in cardiology? could you,find_doctor
+Can you connect me with a live representative? can you,support
+How do I submit a complaint? I need to,feedback
+What are your visiting hours? I need to,hospital_information
+How can I prevent hypertension? can you,preventive_care
+What is your cancellation policy? can you,faq_cancellation
+Do you offer parking? could you,hospital_information
+Does my insurance cover this appointment? please,insurance_inquiry
+What are some common causes of headaches? please,symptom_analysis
+How do I cancel my upcoming appointment? I need to,book_appointment
+How do I submit a complaint? I need to,feedback
+I need a refill for my prescription for Lipitor can you,prescription_refill
+hello please,greeting
+hi could you,greeting
+hey there I need to,greeting
+Can I see a specialist in cardiology? can you,find_doctor
+hey there I need to,greeting
+good evening please,greeting
+Is there wheelchair accessibility? can you,hospital_information
+How can I make a payment? could you,billing_inquiry
+How can I prevent hypertension? could you,preventive_care
+good evening please,greeting
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+I'm looking for a doctor for headache can you,find_doctor
+hello can you,greeting
+I'm looking for a doctor for headache could you,find_doctor
+Find doctors accepting new patients please,find_doctor
+What forms do I need to fill out before my appointment? could you,faq_forms
+What is your cancellation policy? could you,faq_cancellation
+What appointments are available for dermatology this week? could you,book_appointment
+How can I prevent hypertension? please,preventive_care
+Can I renew my prescriptions online? I need to,prescription_refill
+What are the qualifications of Dr. Smith? could you,find_doctor
+Can you connect me with a live representative? can you,support
+What are the estimated costs for this service? could you,billing_inquiry
+Can I view my recent test results? could you,test_results
+hi please,greeting
+Can I see a specialist in cardiology? I need to,find_doctor
+hello could you,greeting
+What are some common causes of headaches? I need to,symptom_analysis
+How do I submit a complaint? could you,feedback
+What do these results mean? can you,test_results
+hello please,greeting
+I need a refill for my prescription for Lipitor could you,prescription_refill
+hey there can you,greeting
+I'm having trouble navigating the system please,support
+How can I prevent hypertension? I need to,preventive_care
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+How can I make a payment? I need to,billing_inquiry
+I'm having trouble navigating the system could you,support
+Can I renew my prescriptions online? can you,prescription_refill
+What forms do I need to fill out before my appointment? could you,faq_forms
+hey there can you,greeting
+What forms do I need to fill out before my appointment? can you,faq_forms
+good afternoon can you,greeting
+How can I make a payment? I need to,billing_inquiry
+hi could you,greeting
+What appointments are available for dermatology this week? I need to,book_appointment
+How can I prevent hypertension? could you,preventive_care
+What is your cancellation policy? can you,faq_cancellation
+How can I prevent hypertension? I need to,preventive_care
+How do I submit a complaint? can you,feedback
+How can I prevent hypertension? I need to,preventive_care
+How can I prevent hypertension? I need to,preventive_care
+I'm having trouble navigating the system could you,support
+What forms do I need to fill out before my appointment? please,faq_forms
+What appointments are available for dermatology this week? can you,book_appointment
+What are the estimated costs for this service? could you,billing_inquiry
+Can I see a specialist in cardiology? I need to,find_doctor
+I'm looking for a doctor for headache I need to,find_doctor
+Can I view my recent test results? can you,test_results
+What do these results mean? please,test_results
+What do these results mean? can you,test_results
+How do I cancel my upcoming appointment? could you,book_appointment
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+I'm looking for a doctor for headache I need to,find_doctor
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+I need a refill for my prescription for Lipitor could you,prescription_refill
+How can I make a payment? please,billing_inquiry
+Can you recommend resources for diabetes? I need to,health_education
+What appointments are available for dermatology this week? can you,book_appointment
+How do I cancel my upcoming appointment? could you,book_appointment
+Find doctors accepting new patients I need to,find_doctor
+good evening could you,greeting
+Can I see a specialist in cardiology? can you,find_doctor
+Can I reschedule my appointment with Dr. Smith? I need to,book_appointment
+hi I need to,greeting
+Does my insurance cover this appointment? can you,insurance_inquiry
+Where is the cardiology department located? could you,hospital_information
+Do you offer parking? please,hospital_information
+Can I renew my prescriptions online? could you,prescription_refill
+What are the estimated costs for this service? please,billing_inquiry
+Can you connect me with a live representative? can you,support
+What are the estimated costs for this service? I need to,billing_inquiry
+how can I help you today? can you,greeting
+What forms do I need to fill out before my appointment? I need to,faq_forms
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+Can I reschedule my appointment with Dr. Smith? I need to,book_appointment
+Can you connect me with a live representative? could you,support
+Can I view my recent test results? I need to,test_results
+Does my insurance cover this appointment? could you,insurance_inquiry
+good morning could you,greeting
+good evening could you,greeting
+good evening can you,greeting
+What appointments are available for dermatology this week? please,book_appointment
+How can I make a payment? I need to,billing_inquiry
+Can I view my recent test results? could you,test_results
+good afternoon can you,greeting
+How do I cancel my upcoming appointment? I need to,book_appointment
+Can you recommend resources for diabetes? I need to,health_education
+How do I cancel my upcoming appointment? can you,book_appointment
+What are the qualifications of Dr. Smith? can you,find_doctor
+Can I renew my prescriptions online? I need to,prescription_refill
+Is there wheelchair accessibility? could you,hospital_information
+How can I prevent hypertension? I need to,preventive_care
+good evening can you,greeting
+Do you offer parking? please,hospital_information
+What are your visiting hours? can you,hospital_information
+What forms do I need to fill out before my appointment? could you,faq_forms
+I'm looking for a doctor for headache please,find_doctor
+I'm looking for a doctor for headache please,find_doctor
+What are the qualifications of Dr. Smith? I need to,find_doctor
+Where is the cardiology department located? could you,hospital_information
+I'm having trouble navigating the system I need to,support
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+hi could you,greeting
+What appointments are available for dermatology this week? I need to,book_appointment
+What are the estimated costs for this service? I need to,billing_inquiry
+What appointments are available for dermatology this week? I need to,book_appointment
+Can you recommend resources for diabetes? please,health_education
+What are some common causes of headaches? could you,symptom_analysis
+What forms do I need to fill out before my appointment? please,faq_forms
+What do these results mean? can you,test_results
+Find doctors accepting new patients could you,find_doctor
+What are the estimated costs for this service? could you,billing_inquiry
+Can you recommend resources for diabetes? could you,health_education
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+Can you connect me with a live representative? could you,support
+good morning can you,greeting
+good afternoon please,greeting
+how can I help you today? please,greeting
+Is there wheelchair accessibility? I need to,hospital_information
+How do I submit a complaint? could you,feedback
+good evening can you,greeting
+good afternoon can you,greeting
+Is there wheelchair accessibility? please,hospital_information
+What are your visiting hours? can you,hospital_information
+What forms do I need to fill out before my appointment? please,faq_forms
+What are some common causes of headaches? could you,symptom_analysis
+how can I help you today? I need to,greeting
+How can I prevent hypertension? could you,preventive_care
+What are some common causes of headaches? can you,symptom_analysis
+Can you connect me with a live representative? please,support
+Can I see a specialist in cardiology? could you,find_doctor
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+hey there I need to,greeting
+Can I renew my prescriptions online? please,prescription_refill
+Can I see a specialist in cardiology? please,find_doctor
+What is your cancellation policy? I need to,faq_cancellation
+I'm having trouble navigating the system I need to,support
+Do you offer parking? could you,hospital_information
+how can I help you today? please,greeting
+Is there wheelchair accessibility? please,hospital_information
+hello I need to,greeting
+Where is the cardiology department located? I need to,hospital_information
+Can I see a specialist in cardiology? could you,find_doctor
+Where is the cardiology department located? I need to,hospital_information
+hey there I need to,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+What are the qualifications of Dr. Smith? please,find_doctor
+What forms do I need to fill out before my appointment? I need to,faq_forms
+hello please,greeting
+Does my insurance cover this appointment? could you,insurance_inquiry
+Can I view my recent test results? can you,test_results
+How can I make a payment? I need to,billing_inquiry
+How do I cancel my upcoming appointment? I need to,book_appointment
+I need a refill for my prescription for Lipitor can you,prescription_refill
+good afternoon please,greeting
+hello can you,greeting
+Do you offer parking? can you,hospital_information
+good morning could you,greeting
+How do I cancel my upcoming appointment? I need to,book_appointment
+Is there wheelchair accessibility? could you,hospital_information
+How do I cancel my upcoming appointment? I need to,book_appointment
+Can you connect me with a live representative? I need to,support
+I'm having trouble navigating the system could you,support
+I'm having trouble navigating the system can you,support
+Is there wheelchair accessibility? I need to,hospital_information
+Can you connect me with a live representative? could you,support
+hello please,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM could you,book_appointment
+Can I view my recent test results? can you,test_results
+Where is the cardiology department located? I need to,hospital_information
+Can you recommend resources for diabetes? I need to,health_education
+What appointments are available for dermatology this week? please,book_appointment
+Find doctors accepting new patients can you,find_doctor
+I'm looking for a doctor for headache please,find_doctor
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+hello please,greeting
+What is your cancellation policy? please,faq_cancellation
+I'm having trouble navigating the system I need to,support
+hi please,greeting
+I need a refill for my prescription for Lipitor I need to,prescription_refill
+I'm looking for a doctor for headache can you,find_doctor
+What are some common causes of headaches? can you,symptom_analysis
+how can I help you today? can you,greeting
+What are the qualifications of Dr. Smith? can you,find_doctor
+Can I see a specialist in cardiology? can you,find_doctor
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+Can I reschedule my appointment with Dr. Smith? could you,book_appointment
+What are some common causes of headaches? could you,symptom_analysis
+What are some common causes of headaches? could you,symptom_analysis
+What is your cancellation policy? please,faq_cancellation
+Can you connect me with a live representative? I need to,support
+What forms do I need to fill out before my appointment? please,faq_forms
+good evening could you,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+What do these results mean? could you,test_results
+How can I make a payment? please,billing_inquiry
+Find doctors accepting new patients could you,find_doctor
+hey there please,greeting
+Can you connect me with a live representative? could you,support
+How do I cancel my upcoming appointment? could you,book_appointment
+I'm looking for a doctor for headache can you,find_doctor
+How do I cancel my upcoming appointment? I need to,book_appointment
+I'm having trouble navigating the system please,support
+What are your visiting hours? I need to,hospital_information
+Is there wheelchair accessibility? could you,hospital_information
+Can I renew my prescriptions online? I need to,prescription_refill
+What are some common causes of headaches? I need to,symptom_analysis
+What are your visiting hours? please,hospital_information
+Can you connect me with a live representative? can you,support
+hey there I need to,greeting
+What are the estimated costs for this service? please,billing_inquiry
+Can you connect me with a live representative? can you,support
+I'm having trouble navigating the system please,support
+What are your visiting hours? I need to,hospital_information
+What are the qualifications of Dr. Smith? I need to,find_doctor
+good morning please,greeting
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+Can you recommend resources for diabetes? can you,health_education
+I'm having trouble navigating the system please,support
+How can I make a payment? I need to,billing_inquiry
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+How do I submit a complaint? can you,feedback
+Can I view my recent test results? I need to,test_results
+How can I make a payment? I need to,billing_inquiry
+Can you recommend resources for diabetes? please,health_education
+How do I submit a complaint? could you,feedback
+hi I need to,greeting
+Where is the cardiology department located? could you,hospital_information
+Schedule an appointment with Dr. Smith on June 15 at 10 AM I need to,book_appointment
+Find doctors accepting new patients could you,find_doctor
+I need a refill for my prescription for Lipitor please,prescription_refill
+What are the qualifications of Dr. Smith? please,find_doctor
+Is there wheelchair accessibility? can you,hospital_information
+How can I prevent hypertension? could you,preventive_care
+Schedule an appointment with Dr. Smith on June 15 at 10 AM please,book_appointment
+What forms do I need to fill out before my appointment? can you,faq_forms
+Can I renew my prescriptions online? can you,prescription_refill
+How do I cancel my upcoming appointment? can you,book_appointment
+good afternoon please,greeting
+Can I renew my prescriptions online? can you,prescription_refill
+How can I make a payment? could you,billing_inquiry
+What are your visiting hours? could you,hospital_information
+Do you offer parking? can you,hospital_information
+Can I reschedule my appointment with Dr. Smith? please,book_appointment
+Can I view my recent test results? I need to,test_results
+Where is the cardiology department located? I need to,hospital_information
+How can I prevent hypertension? could you,preventive_care
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+What are the estimated costs for this service? can you,billing_inquiry
+hey there I need to,greeting
+Schedule an appointment with Dr. Smith on June 15 at 10 AM can you,book_appointment
+good morning please,greeting
+How do I cancel my upcoming appointment? could you,book_appointment
+Can I reschedule my appointment with Dr. Smith? can you,book_appointment
+I'm having trouble navigating the system could you,support

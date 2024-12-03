@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #predictions {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 900px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .chartContainer {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .chartContainer {
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Health Predictor</h1>
+    <form id="predictionForm">
+        <label>Beneficiary ID: <input type="number" name="beneficiary_id" required></label><br>
+        <label>Height (cm): <input type="number" name="height" step="any" required></label><br>
+        <label>Weight (kg): <input type="number" name="weight" step="any" required></label><br>
+        <label>Oxygen Count: <input type="number" name="oxygen_count" step="any" required></label><br>
+        <label>Temperature(F): <input type="number" name="temperature" step="any" required></label><br>
+        <label>Pulse Rate: <input type="number" name="pulse_rate" step="any" required></label><br>
+        <label>Diabetic Value: <input type="number" name="diabetic_value" step="any" required></label><br>
+        <label>Systolic BP: <input type="number" name="systolic" step="any" required></label><br>
+        <label>Diastolic BP: <input type="number" name="diastolic" step="any" required></label><br>
+        <button type="submit">Predict</button>
+    </form>
+    <h2>Predictions:</h2>
+    <div id="predictions"></div>
+
+    <!-- Modal for charts -->
+    <div id="chartsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="row">
+                <div id="bmiChartContainer" class="chartContainer">
+                    <canvas id="bmiChart"></canvas>
+                </div>
+                <div id="diabeticChartContainer" class="chartContainer">
+                    <canvas id="diabeticChart"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div id="systolicChartContainer" class="chartContainer">
+                    <canvas id="systolicChart"></canvas>
+                </div>
+                <div id="diastolicChartContainer" class="chartContainer">
+                    <canvas id="diastolicChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            let bmiChart, diabeticChart, systolicChart, diastolicChart;
+
+            $("#predictionForm").on("submit", function(event){
+                event.preventDefault();
+
+                // Destroy existing charts if they exist
+                if (bmiChart) bmiChart.destroy();
+                if (diabeticChart) diabeticChart.destroy();
+                if (systolicChart) systolicChart.destroy();
+                if (diastolicChart) diastolicChart.destroy();
+
+                axios.post("{% url 'RiskEvaluation:predict_health_data' %}", {
+                    beneficiary_id: $("input[name='beneficiary_id']").val(),
+                    height: $("input[name='height']").val(),
+                    weight: $("input[name='weight']").val(),
+                    oxygen_count: $("input[name='oxygen_count']").val(),
+                    temperature: $("input[name='temperature']").val(),
+                    pulse_rate: $("input[name='pulse_rate']").val(),
+                    diabetic_value: $("input[name='diabetic_value']").val(),
+                    systolic: $("input[name='systolic']").val(),
+                    diastolic: $("input[name='diastolic']").val()
+                })
+                .then(function (response) {
+                    let predictionsDiv = $("#predictions");
+                    predictionsDiv.empty();
+                    if (response.data && response.data.future_predictions && response.data.future_predictions.length > 0) {
+                        response.data.future_predictions.forEach(function(prediction){
+                            predictionsDiv.append(`<p>Month ${prediction.month}: BMI: ${prediction.predicted_bmi}, Diabetic Value: ${prediction.predicted_diabetic_value}, Systolic BP: ${prediction.predicted_systolic}, Diastolic BP: ${prediction.predicted_diastolic}</p>`);
+                        });
+
+                        // Prepare data for charts
+                        let months = [];
+                        let bmis = [];
+                        let diabeticValues = [];
+                        let systolicBPs = [];
+                        let diastolicBPs = [];
+
+                        response.data.future_predictions.forEach(function(prediction){
+                            months.push(prediction.month);
+                            bmis.push(prediction.predicted_bmi);
+                            diabeticValues.push(prediction.predicted_diabetic_value);
+                            systolicBPs.push(prediction.predicted_systolic);
+                            diastolicBPs.push(prediction.predicted_diastolic);
+                        });
+
+                        // Render BMI chart
+                        var bmiCtx = document.getElementById('bmiChart').getContext('2d');
+                        bmiChart = new Chart(bmiCtx, {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'BMI',
+                                    data: bmis,
+                                    borderColor: 'rgb(31, 119, 180)',
+                                    backgroundColor: 'rgba(31, 119, 180, 0.2)',
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    pointBackgroundColor: 'rgb(31, 119, 180)',
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            font: {
+                                                size: 14
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    x: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Month',
+                                            font: {
+                                                size: 16
+                                            }
+                                        }
+                                    },
+                                    y: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'BMI',
+                                            font: {
+                                                size: 16
+                                            }
+                                        },
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Render Diabetic Value chart
+                        var diabeticCtx = document.getElementById('diabeticChart').getContext('2d');
+                        diabeticChart = new Chart(diabeticCtx, {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'Diabetic Value',
+                                    data: diabeticValues,
+                                    borderColor: 'rgb(255, 127, 14)',
+                                    backgroundColor: 'rgba(255, 127, 14, 0.2)',
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    pointBackgroundColor: 'rgb(255, 127, 14)',
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            font: {
+                                                size: 14
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    x: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Month',
+                                            font: {
+                                                size: 16
+                                            }
+                                        }
+                                    },
+                                    y: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Diabetic Value',
+                                            font: {
+                                                size: 16
+                                            }
+                                        },
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Render Systolic BP chart
+                        var systolicCtx = document.getElementById('systolicChart').getContext('2d');
+                        systolicChart = new Chart(systolicCtx, {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'Systolic BP',
+                                    data: systolicBPs,
+                                    borderColor: 'rgb(44, 160, 44)',
+                                    backgroundColor: 'rgba(44, 160, 44, 0.2)',
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    pointBackgroundColor: 'rgb(44, 160, 44)',
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            font: {
+                                                size: 14
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    x: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Month',
+                                            font: {
+                                                size: 16
+                                            }
+                                        }
+                                    },
+                                    y: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Systolic BP',
+                                            font: {
+                                                size: 16
+                                            }
+                                        },
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Render Diastolic BP chart
+                        var diastolicCtx = document.getElementById('diastolicChart').getContext('2d');
+                        diastolicChart = new Chart(diastolicCtx, {
+                            type: 'line',
+                            data: {
+                                labels: months,
+                                datasets: [{
+                                    label: 'Diastolic BP',
+                                    data: diastolicBPs,
+                                    borderColor: 'rgb(214, 39, 40)',
+                                    backgroundColor: 'rgba(214, 39, 40, 0.2)',
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    pointBackgroundColor: 'rgb(214, 39, 40)',
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            font: {
+                                                size: 14
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    x: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Month',
+                                            font: {
+                                                size: 16
+                                            }
+                                        }
+                                    },
+                                    y: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Diastolic BP',
+                                            font: {
+                                                size: 16
+                                            }
+                                        },
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Display the modal
+                        var modal = document.getElementById("chartsModal");
+                        modal.style.display = "block";  // Ensure modal is displayed
+                    } else {
+                        predictionsDiv.append("<p>No predictions available.</p>");
+                    }
+                })
+                .catch(function (error) {
+                    console.error("There was an error making the request:", error);
+                });
+            });
+
+            // Close modal on close button click
+            $(".close").on("click", function() {
+                $("#chartsModal").css("display", "none");
+            });
+
+            // Close modal when clicking outside the modal content
+            $(window).on("click", function(event) {
+                if (event.target == document.getElementById("chartsModal")) {
+                    $("#chartsModal").css("display", "none");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

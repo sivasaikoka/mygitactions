@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;  /* Set a base font family */
+    margin: 0;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;  /* Center the title */
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .qa-list {
+    list-style: none;  /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .qa-list li {
+    margin-bottom: 15px;
+  }
+  
+  .question {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  

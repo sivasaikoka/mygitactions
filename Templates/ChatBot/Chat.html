@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Chatbot</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Custom Styles */
+        body {
+            padding-top: 20px;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .message-bubble {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        #userInput {
+            padding-right: 70px; /* Space for button */
+        }
+
+        #sendMessage {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 50px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+            font-size: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        #sendMessage:hover {
+            background-color: #007bff; /* Change color on hover */
+            color: white;
+        }
+
+        #sendMessage svg {
+            width: 30px; /* Adjust icon size as needed */
+            height: 30px;
+        }
+
+        #chatArea {
+            margin-bottom: 80px; /* Ensure space for chat history */
+            position: relative;
+        }
+
+        #chatHistory {
+            overflow-y: auto; /* Enable scrollbar for overflow */
+            max-height: 300px; /* Adjust max height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div id="chatArea" class="card">
+                    <div class="card-header bg-success text-white">
+                        Chat History
+                    </div>
+                    <div class="card-body" id="chatHistory">
+                        <!-- Chat messages will be appended here -->
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header bg-primary text-white">
+                        Medical Chatbot
+                    </div>
+                    <div class="card-body">
+                        <form id="chatForm">
+                            {% csrf_token %}
+                            <div class="input-container">
+                                <label for="userInput">Your Message:</label>
+                                <input type="text" class="form-control" id="userInput" name="user_input">
+                                <button type="button" class="btn btn-primary" id="sendMessage">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    let cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        let cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            let csrftoken = getCookie('csrftoken');
+
+            // Setup jQuery AJAX to include the CSRF token in the headers
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+
+            // Function to handle sending message
+            function sendMessage() {
+                var userInput = $('#userInput').val().trim(); // Trim user input
+                if (!userInput) return;
+
+                $('#chatHistory').append('<div class="message-bubble"><strong>You:</strong> ' + userInput + '</div>');
+                $('#userInput').val(''); // Clear input field after sending message
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "ChatBot:chatbot" %}', // Replace with your endpoint URL
+                    data: {
+                        'user_input': userInput
+                    },
+                    success: function(response) {
+                        $('#chatHistory').append('<div class="message-bubble"><strong>Bot:</strong> ' + response.bot_response + '</div>');
+                        $('#chatHistory').scrollTop($('#chatHistory')[0].scrollHeight); // Scroll to bottom of chat history
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error); // Log error to console
+                    }
+                });
+            }
+
+            // Event listener for sending message on button click
+            $('#sendMessage').click(sendMessage);
+
+            // Event listener for sending message on Enter key press
+            $('#userInput').keydown(function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Prevent form submission on Enter key press
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

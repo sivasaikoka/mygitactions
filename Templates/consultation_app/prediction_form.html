@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Consultation Prediction</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'images/images.png' %}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px; /* Increased max-width to accommodate wider tables */
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      width: 100%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow-x: auto; /* Enable horizontal scrolling */
+    }
+    
+    .prediction-info {
+      margin-bottom: 20px;
+    }
+    
+    .prediction-info h2 {
+      margin-bottom: 10px;
+    }
+    .medication-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    
+    .medication-table th, .medication-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    .medication-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      text-align: left;
+    }
+    
+    
+    
+    .advice-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    
+    .advice-list li {
+      margin-bottom: 10px;
+    }
+    
+    
+    .advice-list ul {
+      margin-left: 20px;
+    }
+    
+    
+    .advice-list strong {
+      color: #007bff;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Medical Consultation Prediction</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="vital">Vital History</label>
+      {{ vital_form.as_p }}
+      <label for="other">Other History</label>
+      {{ other_form.as_p }}
+      <label for="cc_brief">Chief Complaints Brief</label>
+      {{ cc_brief_form.as_p }}
+      <label for="allergy">Allergy</label>
+      {{ allergy_form.as_p }}
+      <label for="investigation">Investigation</label>
+      {{ investigation_form.as_p }}
+      <label for="diagnosis">Diagnosis</label>
+      {{ diagnosis_form.as_p }}
+      
+      {% if output_data %}
+      <div class="output">
+        <h2>Prediction Output</h2>
+        <div class="prediction-info">
+          <p><strong>Type of Consultation Prediction:</strong> {{ output_data.type_of_consultation_prediction }}</p>
+        
+         <!-- Display prescribed medications prediction -->
+<h3>Prescribed Medications Prediction</h3>
+<table class="medication-table">
+  <thead>
+    <tr>
+      <!-- Loop through the keys of the first medication to generate table headers -->
+      {% for key, value in output_data.prescribed_medications_prediction.0.items %}
+      <th>{{ key|capfirst }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Loop through each medication -->
+    {% for medication in output_data.prescribed_medications_prediction %}
+    <tr>
+      <!-- Loop through the values of each medication to generate table cells -->
+      {% for key, value in medication.items %}
+      <td>{{ value }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+        
+          <!-- Display advice prediction -->
+          <h3>Advice Prediction</h3>
+          <ul class="advice-list">
+            {% for key, value in output_data.advice_prediction.items %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% else %}
+      <button type="submit">Submit</button>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>

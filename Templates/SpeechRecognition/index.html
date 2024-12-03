@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech API</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #D6DBD2; / Light sage green background /
+            font-family: Arial, sans-serif;
+        }
+    
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #F2F5EA; / Light cream background /
+            border-radius: 8px;
+        }
+    
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #F2F5EA; / Light cream text /
+            padding: 10px 20px;
+            border-bottom: 2px solid #8E7C93; / Desaturated purple-gray /
+            background-color: #485665; / Muted blue-gray /
+            margin-bottom: 20px;
+        }
+    
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+    
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    
+        th {
+            background-color: #8E7C93; / Desaturated purple-gray /
+            color: #F2F5EA; / Light cream /
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+    
+        tr {
+            background-color: white; / Same color for all rows /
+        }
+    
+        tr:hover {
+            background-color: #D6DBD2; / Light sage green /
+        }
+    
+        .mic-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #1E3231; / Dark teal-green /
+            transition: color 0.3s;
+        }
+    
+        .mic-icon:hover {
+            color: #485665; / Muted blue-gray /
+        }
+    
+        .btn-record {
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin-right: 10px; / Adjust spacing between buttons /
+            border-radius: 5px; / Rounded corners /
+            background-color: #1E3231; / Dark teal-green /
+            color: #F2F5EA; / Light cream text /
+            border: none;
+        }
+    
+        .btn-record:hover {
+            opacity: 0.8; / Lower opacity on hover for visual feedback /
+        }
+    
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    
+        #recorder-indicator {
+            display: none; / Initially hidden /
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red; / Adjust color as needed /
+            margin-left: 10px; / Adjust spacing /
+            vertical-align: middle;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to the Speech API</h1>
+        <div class="card mt-3">
+            <div class="card-header">
+                Voice Input Form
+            </div>
+            <div class="card-body">
+                <form id="voice-form">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Language</span>
+                        <input type="text" class="form-control" id="language" name="language" value="en-IN" required>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Microphone controls">
+                        <button type="button" class="btn btn-success" id="start-recording">Start Recording</button>
+                        <button type="button" class="btn btn-danger" id="stop-recording">Stop Recording</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Timer Display -->
+    <div id="timer" class="text-center mt-3">
+        Timer: <span id="timer-display">00:00:00</span>
+        <div id="recorder-indicator"></div> <!-- This is where the blinking recorder icon will appear -->
+    </div>
+        
+
+        <!-- Modal and Log Button for Past Inputs -->
+        <div class="text-end mb-3">
+            <button type="button" class="btn btn-warning" id="show-log">Show Log</button>
+        </div>
+        <div id="log-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Past Voice Inputs</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Language</th>
+                                    <th>Input Text</th>
+                                    <th>Output Data</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log-table-body">
+                                <!-- Log table rows will be inserted here dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Voice Input Table -->
+        <div id="current-input">
+            <h2>Current Voice Input</h2>
+            <table class="table table-hover">
+                <tbody id="current-input-body">
+                    <!-- Current input rows will be inserted here dynamically -->
+                </tbody>
+            </table>
+            <!-- Hidden input field for the voice input ID -->
+            <input type="hidden" id="voiceInputId" value="{{ voice_input.id }}">
+            <!-- Add the Save Edited Data button -->
+            <button type="button" class="btn btn-primary" id="save-edited-data">Save Edited Data</button>
+        </div>
+
+    <!-- Modal for editing recognized speech -->
+    <div class="modal fade" id="editSpeechModal" tabindex="-1" aria-labelledby="editSpeechModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editSpeechModalLabel">Edit Recognized Speech</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="editSpeechText" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submit-edited-speech">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript code integrated here
+        $(document).ready(function() {
+            let timerInterval;
+            let timerDisplay = document.getElementById('timer-display');
+            let startTime;
+
+            document.getElementById('start-recording').addEventListener('click', function() {
+                startTime = Date.now();
+                timerInterval = setInterval(updateTimer, 1000); // Update every second
+            });
+
+            document.getElementById('stop-recording').addEventListener('click', function() {
+                clearInterval(timerInterval);
+            });
+
+            function updateTimer() {
+                let elapsedTime = Date.now() - startTime;
+                let hours = Math.floor(elapsedTime / 3600000);
+                let minutes = Math.floor((elapsedTime % 3600000) / 60000);
+                let seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+                // Format numbers to always show two digits
+                let formattedTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+                timerDisplay.textContent = formattedTime;
+            }
+
+            function pad(num) {
+                return num.toString().padStart(2, '0');
+            }
+
+            // Function to start blinking recorder indicator
+            function startBlinking() {
+                document.getElementById('recorder-indicator').style.display = 'inline-block';
+                document.getElementById('recorder-indicator').style.animation = 'blink 1s infinite';
+            }
+
+            // Function to stop blinking recorder indicator
+            function stopBlinking() {
+                document.getElementById('recorder-indicator').style.display = 'none';
+                document.getElementById('recorder-indicator').style.animation = 'none'; // Reset animation
+            }
+
+            // Example usage: Call these functions based on your start/stop recording events
+            document.getElementById('start-recording').addEventListener('click', function() {
+                startBlinking(); // Call this when starting recording
+            });
+
+            document.getElementById('stop-recording').addEventListener('click', function() {
+                stopBlinking(); // Call this when stopping recording
+            });
+
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-IN';
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.maxAlternatives = 1;
+
+            let isRecording = false;
+            let speechResult = '';
+
+            recognition.onresult = function(event) {
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        speechResult += event.results[i][0].transcript + ' ';
+                        console.log('Speech result: ', event.results[i][0].transcript);
+                    }
+                }
+            };
+
+            recognition.onend = function() {
+                if (isRecording) {
+                    recognition.start();
+                } else {
+                    if (speechResult.trim()) {
+                        $('#editSpeechText').val(speechResult.trim());
+                        $('#editSpeechModal').modal('show');
+                    }
+                }
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Error occurred in recognition: ' + event.error);
+                if (isRecording) {
+                    recognition.start();
+                }
+            };
+
+            $('#start-recording').click(function(event) {
+                event.preventDefault();
+                if (!isRecording) {
+                    isRecording = true;
+                    speechResult = '';
+                    recognition.start();
+                    console.log('Recording started');
+                }
+            });
+
+            $('#stop-recording').click(function(event) {
+                event.preventDefault();
+                if (isRecording) {
+                    isRecording = false;
+                    recognition.stop();
+                    console.log('Recording stopped');
+                }
+            });
+
+            $('#submit-edited-speech').click(function() {
+                const editedSpeech = $('#editSpeechText').val().trim();
+                const language = $('#language').val();
+
+                if (editedSpeech) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{% url 'SpeechRecognition:get_voice' %}",
+                        headers: {
+                            "X-CSRFToken": getCookie("csrftoken")
+                        },
+                        data: JSON.stringify({ language: language, speech_result: editedSpeech }),
+                        contentType: "application/json",
+                        success: function(data) {
+                            alert('Voice data received and processed.');
+                            console.log(data);
+                            loadCurrentInput(data); // Reload current input after submission
+                            loadPastInputs(); // Reload past inputs after submission
+                        },
+                        error: function(error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                }
+
+                $('#editSpeechModal').modal('hide');
+            });
+
+            $('#show-log').click(function() {
+                loadPastInputs();
+                $('#log-modal').modal('show');
+            });
+
+            function loadPastInputs() {
+                $.ajax({
+                    type: "GET",
+                    url: "{% url 'SpeechRecognition:list_voice_inputs' %}",
+                    success: function(data) {
+                        // Sort data by timestamp in descending order
+                        data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+                        $('#log-table-body').empty();
+                        data.forEach(function(input) {
+                            let outputRows = '';
+                            for (const [key, value] of Object.entries(input.output_data)) {
+                                if (value !== null && value !== undefined && value !== '') {
+                                    outputRows += `
+                                        <tr>
+                                            <td>${key}</td>
+                                            <td>${value}</td>
+                                        </tr>
+                                    `;
+                                }
+                            }
+                            if (input.language && input.input_text && outputRows.trim() !== '') {
+                                $('#log-table-body').append(`
+                                    <tr>
+                                        <td>${input.language}</td>
+                                        <td>${input.input_text}</td>
+                                        <td>
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    ${outputRows}
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                `);
+                            }
+                        });
+            
+                        // Check if data is not empty before calling loadCurrentInput
+                        if (data.length > 0) {
+                            loadCurrentInput(data[0]);
+                        } else {
+                            $('#current-input-body').html('<tr><td colspan="3">No current input available.</td></tr>');
+                        }
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                    }
+                });
+            }
+            
+            function loadCurrentInput(input) {
+                const outputData = input.output_data;
+            
+                let outputRows = '';
+            
+                // Iterate through each field (key) in the outputData object
+                for (const field in outputData) {
+                    const value = outputData[field] || ''; // Handle cases where value is undefined/null
+                    outputRows += `
+                        <tr>
+                            <td>${field}</td>
+                            <td contenteditable="true">${value}</td>
+                        </tr>
+                    `;
+                }
+            
+                const currentInputHTML = `
+                    <table class="table table-bordered">
+                        <tbody>
+                            ${outputRows}
+                        </tbody>
+                    </table>
+                `;
+            
+                $('#current-input-body').html(currentInputHTML);
+            }
+            
+
+            $('#save-edited-data').click(function() {
+                const editedData = {};
+                $('#current-input-body tr').each(function() {
+                    const field = $(this).find('td:first-child').text().trim();
+                    const value = $(this).find('td:nth-child(2)').text().trim();
+                    editedData[field] = value;
+                });
+
+                console.log('edited data ', editedData)
+
+            
+                const language = $('#language').val();
+                const inputText = $('#editSpeechText').val().trim();
+                const id = $('#voiceInputId').val(); // Make sure you have this hidden input field to capture the ID
+            
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'SpeechRecognition:save_edited_voice' %}",
+                    headers: {
+                        "X-CSRFToken": getCookie("csrftoken")
+                    },
+                    data: JSON.stringify({
+                        id: id,
+                        language: language,
+                        input_text: inputText,
+                        output_data: editedData
+                    }),
+                    contentType: "application/json",
+                    success: function(response) {
+                        alert('Edited data saved successfully.');
+                        console.log(response);
+                        // Optionally reload past inputs to reflect the saved changes
+                        loadPastInputs();
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                        alert('An error occurred while saving the data.');
+                    }
+                });
+            });
+
+
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    let cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        let cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+        });
+    </script>
+</body>
+</html>
