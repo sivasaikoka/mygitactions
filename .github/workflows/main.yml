@@ -3,50 +3,51 @@ name: Run Django Application
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the 'main' branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger on PRs to the 'main' branch
+      - main
 
 jobs:
   setup-and-run:
-    runs-on: ubuntu-latest  # Use the GitHub-hosted Ubuntu runner
+    runs-on: ubuntu-latest # Use GitHub-hosted runner with Ubuntu
 
     steps:
-      # Step 1: Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # You can change this to the required Python version
+          python-version: "3.10"
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            portaudio19-dev \
+            libsndfile1  # These packages are required to build PyAudio
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Install Python dependencies
+          pip install -r requirements.txt  # Install Python packages
 
-      # Step 4: Set up database (if applicable)
       - name: Set up database
         run: |
-          # You can configure a database here if needed, e.g., for PostgreSQL
           sudo apt-get install -y postgresql postgresql-contrib
           sudo service postgresql start
-          sudo -u postgres psql -c "CREATE DATABASE mydb;"  # Create a database for Django
+          sudo -u postgres psql -c "CREATE DATABASE mydb;"
 
-      # Step 5: Run migrations and collect static files
       - name: Run Django migrations and collect static files
         run: |
-          python manage.py migrate  # Apply database migrations
-          python manage.py collectstatic --noinput  # Collect static files for Django
+          python manage.py migrate
+          python manage.py collectstatic --noinput
 
-      # Step 6: Run Django development server
       - name: Run Django server
         run: |
           python manage.py runserver 0.0.0.0:8000
         env:
-          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}  # Secure Django secret key
-          DJANGO_DEBUG: "True"  # You can set other necessary environment variables here
+          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+          DJANGO_DEBUG: "True"
