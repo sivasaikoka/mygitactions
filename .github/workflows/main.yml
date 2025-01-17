@@ -43,7 +43,7 @@ jobs:
       - name: Run Django migrations and collect static files
         run: |
           python manage.py migrate
-          python manage.py collectstatic --noinput
+          python manage.py collectstatic --noinput 
 
       - name: Run Django server
         run: |
